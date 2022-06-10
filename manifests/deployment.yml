@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: cjduripipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cjduripipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: cjduripipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: cjduripipelinesjavascriptdocker 
+          image: user14acr2.azurecr.io/cjduripipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
